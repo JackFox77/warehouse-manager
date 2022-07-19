@@ -80,31 +80,25 @@ function accuse(name) {
     let accused = packages.find(package => package.to == name)
     console.log('package: ', accused)
     if (accused.lost == true) { window.alert('congratulations, you found it') }
-    else{window.alert('Nope, try again')}
+    else { window.alert('Nope, try again') }
+    currentPackages = packages
+    drawPackage()
+}
+
+
+
+
+
+function filterFragile() {
+    currentPackages = currentPackages.filter(package => package.fragile == true)
+    drawPackage()
 }
 
 function filterHeavy() {
-    // debugger
-    let stout = packages.find(packages => packages.heavy == true)
-    currentPackages = currentPackages.filter(packages => packages.heavy == stout.heavy)
-    console.log(' heavy package', currentPackages)
+    currentPackages = currentPackages.filter(package => package.heavy == true)
     drawPackage()
 }
-
 function filterPriority() {
-    // debugger
-    let important = packages.find(packages => packages.priority == true)
-    currentPackages = currentPackages.filter(packages => packages.priority == important.priority)
-    console.log(' priority package', currentPackages)
+    currentPackages = currentPackages.filter(package => package.priority == true)
     drawPackage()
 }
-
-function filterFragile() {
-    let soft = packages.find(packages => packages.fragile == true)
-    currentPackages = currentPackages.filter(packages => packages.fragile == soft.fragile)
-    console.log(' Fragile Package', currentPackages)
-    drawPackage()
-}
-
-
-
