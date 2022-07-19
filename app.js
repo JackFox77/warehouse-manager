@@ -4,7 +4,8 @@ const packages = [{
         fragile: false,
         to: 'Harrington',
         trackingNumber: '1324kjs',
-        lost: false
+        lost: false,
+        location:'in-transit'
     },
     {
         heavy: false,
@@ -13,6 +14,7 @@ const packages = [{
         to: 'Mark',
         trackingNumber: '1325sdk',
         lost: false,
+        location:'delivered'
     },
     {
         heavy: true,
@@ -20,7 +22,8 @@ const packages = [{
         fragile: true,
         to: 'Mick',
         trackingNumber: 'jffd147',
-        lost: false
+        lost: false,
+        location:'in-transit'
     },
     {
         heavy: false,
@@ -29,6 +32,7 @@ const packages = [{
         to: 'Jake',
         trackingNumber: 'acdc145',
         lost: false,
+        location:'sorting'
     },
     {
         heavy: true,
@@ -36,6 +40,7 @@ const packages = [{
         fragile: true,
         to: 'Brittany',
         lost: false,
+        location:'sorting'
     },
     {
         heavy: false,
@@ -43,7 +48,8 @@ const packages = [{
         fragile: false,
         to: 'Zach',
         trackingNumber: '8081baz',
-        lost: false
+        lost: false,
+        location:'manufacturer'
     },
     {
         heavy: true,
@@ -51,7 +57,17 @@ const packages = [{
         fragile: true,
         to: 'Jeremy',
         trackingNumber: 'suz2367',
-        lost: false
+        lost: false,
+        location:'manufacturer'
+    },
+        {
+        heavy: false,
+        priority: true,
+        fragile: true,
+        to: 'James',
+        trackingNumber: 'suz2367',
+        lost: false,
+        location:'manufacturer'
     }
 ]
 
@@ -81,6 +97,7 @@ function accuse(name) {
     console.log('package: ', accused)
     if (accused.lost == true) { window.alert('congratulations, you found it') }
     else { window.alert('Nope, try again') }
+    packages.forEach(p=>p.lost= false)
     currentPackages = packages
     losePackage()
     drawPackage()
