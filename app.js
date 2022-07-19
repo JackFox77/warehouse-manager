@@ -82,6 +82,7 @@ function accuse(name) {
     if (accused.lost == true) { window.alert('congratulations, you found it') }
     else { window.alert('Nope, try again') }
     currentPackages = packages
+    losePackage()
     drawPackage()
 }
 
@@ -101,4 +102,17 @@ function filterHeavy() {
 function filterPriority() {
     currentPackages = currentPackages.filter(package => package.priority == true)
     drawPackage()
+}
+
+function filterStuff(property) {
+    console.log('filtering', property)
+    let lostPackage = packages.find(package => package.lost == true)
+    currentPackages = currentPackages.filter(package => package[property] == lostPackage[property])
+    drawPackage()
+
+}
+
+function restart() {
+    
+
 }

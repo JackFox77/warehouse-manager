@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
-  <body class="">
+  <body class="bg-secondary">
     <main class="container"></main>
     <section class="row">
-        <div class="text-center col-3 btn-info" onclick="filterHeavy()">Heavy</div>
-        <div class="text-center col-3 btn-info" onclick="filterPriority()">Priority</div>
-        <div class="text-center col-3 btn-info" onclick="filterFragile()">Fragile</div>
-        <div class="text-center col-3 btn-info" onclick="restart()">Restart</div>
+        <div class="text-center col-3 btn-warning" onclick="filterStuff('heavy')">Heavy</div>
+        <div class="text-center col-3 btn-warning" onclick="filterStuff('priority')">Priority</div>
+        <div class="text-center col-3 btn-warning" onclick="filterStuff('fragile')">Fragile</div>
+        <div class="text-center col-3 btn-warning" onclick="restart()"></div>
     </section>
     <section class="row pt-5" id="packages"></section>
       </main>
